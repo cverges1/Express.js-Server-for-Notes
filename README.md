@@ -18,7 +18,16 @@
   
   ## Usage
   
-  Visit https://server-note-taker-app.herokuapp.com. Type in your title in the "Note Title" field then type the note in the "note text" field. The note will then be saved on the left side of the webpage. The delete button is not functional yet.
+  Visit https://server-note-taker-app.herokuapp.com. Click "Get Started". 
+  
+   ![Screenshot of Homepage](./Screenshot%202023-06-06%20at%201.15.52%20PM.png)
+
+  On the next page, type in your title in the "Note Title" field then type the note in the "note text" field. The note will then be saved on the left side of the webpage. 
+  
+  ![Screenshot of page to save notes](./Screenshot%202023-06-06%20at%201.16.31%20PM.png)
+
+  
+  The delete button is not functional yet.
   
   ## Credits
   
