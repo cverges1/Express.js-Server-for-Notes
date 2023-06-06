@@ -1,5 +1,7 @@
 const app = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { json } = require('body-parser');
+const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
+const { v4: uuidv4 } = require('uuid');
 
 
 app.get('/', (req, res) =>
@@ -17,6 +19,7 @@ app.post('/', (req, res) => {
     const newNote = {
       title,
       text,
+      id: uuidv4(),
     };
 
     readAndAppend(newNote, './db/db.json');
@@ -25,6 +28,26 @@ app.post('/', (req, res) => {
     res.error('Error in adding note');
   }
 });
+
+//Still experimenting with delete button
+
+// app.delete(`/api/notes/*`, (req, res) => {
+//   const noteId = req.params;
+
+//   console.log(noteId);
+
+//   readAndAppend('./db/db.json')
+//   .then((data) => JSON.parse(data))
+//   .then((json) => {
+
+//     const result = json.filter((note) => note.id !== noteId);
+
+//     readFromFile('./db/db.json', result);
+
+//     res.json(`Note ${noteId} has been deleted 🗑️`);
+//   });
+// });
+
 
 
 module.exports = app;
